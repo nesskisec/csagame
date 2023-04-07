@@ -1,0 +1,108 @@
+{
+  "questions": [
+    "What is phishing?",
+    "What is the most common way\nto deliver a phishing attack?",
+    "What should you do if you\nreceive a suspicious email?",
+    "You receive an email with an attachment\nfrom an unknown sender. What should you do?",
+    "What is a common tactic used by phishing emails\nto obtain personal information?",
+    "What is a common way to protect yourself\nfrom phishing attacks?",
+    "What is a common way to\nidentify a phishing email?",
+    "What is a common tactic used\nby attackers in a whaling attack?",
+    "What is a common type of phishing attack\nthat targets a specific individual or organization?",
+    "What is ransomware?",
+    "What is the best way\nto protect against ransomware?",
+    "What is a common way to\nprevent ransomware attacks?",
+    "What should you do if you\nget infected with ransomware?",
+    "What is the most common way\nto get infected with ransomware?"
+  ],
+  "answers": [
+    2,
+    3,
+    4,
+    2,
+    1,
+    4,
+    4,
+    1,
+    1,
+    4,
+    4,
+    4,
+    3,
+    4
+  ],
+  "options": [
+
+    ["A type of fishing",
+      "An attempt to obtain sensitive information\nby disguising as a trustworthy entity",
+      "A type of spam email",
+      "A type of spyware"
+    ],
+    ["Phone call",
+      "Instant message",
+      "Email",
+      "Social media"
+    ],
+    [ "Click on the links to investigate",
+      "Reply with your personal information",
+      "Forward to your colleagues for their opinions",
+      "Delete the email"
+    ],
+    ["Click on the attachment to see what it is.",
+      "Delete the email without opening the attachment.",
+      "Forward the email to your boss to see if it is safe.",
+      "Reply to the email and ask for more\ninformation about the attachment."
+    ],
+    ["Urgency",
+      "Offering free money",
+      "Making threats",
+      "All of the above"
+    ],
+    ["Install anti-virus software on your computer",
+      "Keep your operating system and software up to date",
+      "Use strong, unique passwords for each account",
+      "All of the above"
+    ],
+    ["The email address of the sender\nlooks suspicious or unfamiliar",
+      "The email contains a lot of\nspelling or grammatical errors",
+      "The email requests personal\ninformation or asks for money",
+      "All of the above"
+    ],
+    ["Pretending to be a CEO or high-level executive",
+      "Sending spam emails to a large group of people",
+      "Hacking into a company's servers",
+      "Using social engineering to\ngain access to a victim's account"
+    ],
+    ["Spear phishing",
+      "Whaling",
+      "Vishing",
+      "Smishing"
+    ],
+    ["A type of virus that infects your computer",
+      "A type of software used for editing photos",
+      "A type of internet scam",
+      "A type of malware that encrypts your files\nand demands payment for decryption"
+
+    ],
+    ["Install antivirus software",
+      "Use a firewall",
+      "Disconnect from the internet",
+      "Educate yourself on how to avoid\nransomware attacks"
+    ],
+    ["Use strong passwords",
+      "Keep your software up-to-date",
+      "Back up your files regularly",
+      "All of the above"
+    ],
+    ["Pay the ransom",
+      "Try to decrypt your files yourself",
+      "Wipe your computer and restore\nyour files from a backup",
+      "Ignore it and hope it goes away"
+    ],
+    ["Downloading software from\nuntrusted sources",
+      "Opening email attachments\nfrom unknown senders",
+      "Visiting malicious websites",
+      "All of the above"
+    ]
+  ]
+}
