@@ -59,10 +59,19 @@ def options_window():
     options_frame = ctk.CTkFrame(master=app, width=500, height=500, corner_radius=6)
     options_frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
-    mode_button = ctk.CTkButton(options_frame, text='Appearance mode', command=lambda: ctk.set_appearance_mode('light'))
-    mode_button.pack()
+    options_frame2 = ctk.CTkFrame(master=options_frame, width=500, height=500, corner_radius=6)
+    options_frame2.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
-    back_button(options_frame)
+    light_button = ctk.CTkButton(options_frame2, text='Light mode', command=lambda: ctk.set_appearance_mode('light'))
+    light_button.place(relx=0.5, rely=0.6, anchor=tkinter.CENTER)
+
+    dark_button = ctk.CTkButton(options_frame2, text='Dark mode', command=lambda: ctk.set_appearance_mode('dark'))
+    dark_button.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
+
+    construction_label = ctk.CTkLabel(options_frame2, text="This page is under construction", font=("font.tff", 30, 'bold'))
+    construction_label.place(anchor='nw')
+
+    back_button(options_frame2)
 
 
 # Setting the score counter variable
@@ -164,10 +173,13 @@ def play_window():
         increment_counter()
 
     else:
-        result_frame = ctk.CTkFrame(master=play_frame, width=750, height=750, corner_radius=15)
-        result_frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+        #result_frame = ctk.CTkFrame(master=play_frame, width=750, height=750, corner_radius=15)
+        #result_frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
         result_label = ctk.CTkLabel(play_frame, text=f'Your final score is:\n{score}', font=("font.tff", 50, 'bold'))
         result_label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+        player_entry = ctk.CTkEntry(play_frame, width=260, height=50, placeholder_text="Enter your name:")
+        player_entry.place(relx=0.5, rely=0.7, anchor=tkinter.CENTER)
+        #player_entry.bind('<Return>', lambda event: self.get_user_input())
         back_button(play_frame)
         reset_counter()
 
