@@ -1,5 +1,4 @@
-# csagame
-Cyber Security Awareness Game
+# Cyber Security Awareness Game
 
 
 ### Environment Dependencies
