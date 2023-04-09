@@ -3,6 +3,7 @@
 
 ### Environment Dependencies
 ```ad-warning
+python==3.10
 certifi==2022.12.7
 charset-normalizer==3.1.0
 customtkinter==5.1.2
