@@ -87,19 +87,19 @@ class Level2:
                  ["ID card"],
                  {"north": 6, "east": 11}),
 
-            Room("Training Room", "You are in the training room. There are tables and chairs here.\n\n", [],
+            Room("Training Room", "You are in the training room. There are tables and chairs here.\n\n", ["USB drive"],
                  {"west": 10}),
 
-            Room("Server Room", "You are in a room full of servers. It is very noisy in here.\n\n", ["USB drive"], {"west": 7, "south": 17}),
+            Room("Server Room", "You are in a room full of servers. It is very noisy in here.\n\n", [], {"west": 7, "south": 17}),
 
             Room("Boardroom", "You are in the boardroom. There is a long table and chairs here.\n\n", [],
                  {"east": 4, "north": 14, "south": 7}),
 
             Room("CEO's Office", "You are in the CEO's office. There is a large desk and a bookshelf here.\n\n",
-                 ["key"],
+                 [],
                  {"south": 13, "west": 15}),
 
-            Room("Executive Bathroom", "You are in the executive bathroom. There is a sink and a toilet here.\n\n", [],
+            Room("Executive Bathroom", "You are in the executive bathroom. There is a sink and a toilet here.\n\n", ["key"],
                  {"east": 14}),
 
             Room("Conference Room", "You are in a conference room. There is a projector and a whiteboard here.\n\n", [],
@@ -159,7 +159,10 @@ class Level2:
             item_name = user_input[4:]
             if item_name in self.inventory:
                 if self.current_room.name == "CEO's Office" and item_name == "key":
-                    self.lbl_input.configure(text="Congratulations! You have found the secret document and won the game!")
+                    self.lbl_input.configure(text="You have found a cable hidden.")
+                    self.btn_submit.configure(state=tk.DISABLED)
+                elif self.current_room.name == "Server Room" and item_name == "USB drive":
+                    self.lbl_input.configure(text="You used the USB Drive and have infected the computers with Ransomware.\nGame Over!", text_color="red")
                     self.btn_submit.configure(state=tk.DISABLED)
                 else:
                     self.lbl_input.configure(text="\n\nYou cannot use that item here.\n\n")

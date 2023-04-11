@@ -40,7 +40,7 @@ def main_window():
     play_button = ctk.CTkButton(master=frame, width=220, height=40, text="Play", command=play_options, corner_radius=6)
     play_button.place(relx=0.5, rely=0.3, anchor=tkinter.CENTER)
 
-    scoreboard_button = ctk.CTkButton(master=frame, width=220, height=40, text="Scoreboard", command=scoreboard, corner_radius=6)
+    scoreboard_button = ctk.CTkButton(master=frame, width=220, height=40, text="Scoreboard", command=update_scoreboard, corner_radius=6)
     scoreboard_button.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
 
     options_button = ctk.CTkButton(master=frame, width=220, height=40, text="Options", command=options_window,
@@ -179,7 +179,7 @@ def play_window():
         result_label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
         player_entry = ctk.CTkEntry(play_frame, width=260, height=50, placeholder_text="Enter your name:")
         player_entry.place(relx=0.5, rely=0.7, anchor=tkinter.CENTER)
-        #player_entry.bind('<Return>', lambda event: self.get_user_input())
+        #player_entry.bind('<Return>', lambda event: scoreboard())
         back_button(play_frame)
         reset_counter()
 
@@ -195,11 +195,31 @@ def player():
     login.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
 
 
-def scoreboard():
+# Work in progress
+def scoreboard(self):
+    username_input = self.player_entry.get()
+    self.player_entry.delete(0, 'end')
+    self.update_scoreboard(username_input)
     pass
 
+# Work in progress
+def update_scoreboard():
+    username = player_entry.get()
+    # get the new score for the user
+    new_score = get_new_score(username)
+    # update the scoreboard function with the new score
+    update_scoreboard(username, new_score)
+    # update the label on the tkinter window with the new scores
+    display_scores(get_current_scores())
+    pass
 
+# Work in progress
 def feedback():
+    scoreboard_frame = ctk.CTkFrame(master=app, width=750, height=750, corner_radius=6)
+    scoreboard_frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+
+    scoreboard_label = ctk.CTkLabel(scoreboard_frame, text=f'{scoreboard().username_input}\t\t\t\t{score}', font=("font.tff", 50, 'bold'))
+    scoreboard_label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
     pass
 
 
