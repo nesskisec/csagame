@@ -13,7 +13,12 @@
     "What is the best way\nto protect against ransomware?",
     "What is a common way to\nprevent ransomware attacks?",
     "What should you do if you\nget infected with ransomware?",
-    "What is the most common way\nto get infected with ransomware?"
+    "What is the most common way\nto get infected with ransomware?",
+    "What is a Man-in-the-Middle (MitM) attack?",
+    "How does a MitM attack work?",
+    "What is a common method used in a MitM attack?",
+    "What is the goal of a MitM attack?",
+    "How can you protect yourself from MitM attacks?"
   ],
   "answers": [
     2,
@@ -29,7 +34,12 @@
     4,
     4,
     3,
-    4
+    4,
+    1,
+    2,
+    4,
+    2,
+    3
   ],
   "options": [
 
@@ -102,6 +112,31 @@
     ["Downloading software from\nuntrusted sources",
       "Opening email attachments\nfrom unknown senders",
       "Visiting malicious websites",
+      "All of the above"
+    ],
+    ["An attack that intercepts and \nalters communication between two parties",
+      "An attack that floods a system \nwith traffic to overwhelm it",
+      "An attack that uses a fake login \npage to steal passwords",
+      "An attack that deletes or \nalters data on a system"
+    ],
+    ["The attacker tricks users \ninto revealing their passwords",
+      "The attacker intercepts communication \nbetween two parties and impersonates \neach party to the other",
+      "The attacker floods a system\nwith traffic to overwhelm it",
+      "The attacker uses a pre-computed list \nof passwords to gain access to a system"
+    ],
+    ["Brute force attack",
+      "Phishing",
+      "Social engineering",
+      "ARP spoofing"
+    ],
+    ["To delete or alter data on a system",
+      "To steal sensitive information, \nsuch as login credentials or credit card numbers",
+      "To gain access to a system to install malware",
+      "To overload a system with traffic"
+    ],
+    ["Enable two-factor authentication",
+      "Be cautious of suspicious links and emails",
+      "Use a Virtual Private Network (VPN)",
       "All of the above"
     ]
   ]
