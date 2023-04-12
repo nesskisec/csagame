@@ -18,7 +18,6 @@ class Level2:
     def __init__(self, app):
         self.inventory = []
         self.progress = 0
-        #self.current_room = None
         self.create_rooms()
         self.current_room = self.rooms[0]
 
@@ -44,7 +43,6 @@ class Level2:
 
         self.entry = ctk.CTkEntry(self.app, width=220, height=50, placeholder_text="Enter your command here.")
         self.entry.place(relx=0.5, rely=0.7, anchor=tk.CENTER)
-        #self.entry.focus_set()
 
         self.btn_submit = ctk.CTkButton(self.app, width=220, height=50, text="Submit", command=self.get_user_input)
         self.btn_submit.place(relx=0.5, rely=0.77, anchor=tk.CENTER)

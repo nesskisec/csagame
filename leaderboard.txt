@@ -1,0 +1,1 @@
+[{"name": "Kim", "score": 22}, {"name": "Kim", "score": 22}, {"name": "Kim", "score": 22}, {"name": "Kim", "score": 22}, {"name": "Kim", "score": 17}, {"name": "Kim", "score": 6}, {"name": "Kim", "score": 6}, {"name": "Kim", "score": 6}, {"name": "Kim", "score": 4}, {"name": "Kim", "score": 1}, {"name": "Kim", "score": 1}, {"name": "Kim", "score": 1}]

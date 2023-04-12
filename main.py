@@ -1,6 +1,10 @@
+import itertools
+
 import customtkinter as ctk
 import tkinter
 from tkinter import *
+from tkinter.ttk import *
+from tkinter import ttk
 import json
 from level2 import Level2
 
@@ -40,7 +44,7 @@ def main_window():
     play_button = ctk.CTkButton(master=frame, width=220, height=40, text="Play", command=play_options, corner_radius=6)
     play_button.place(relx=0.5, rely=0.3, anchor=tkinter.CENTER)
 
-    scoreboard_button = ctk.CTkButton(master=frame, width=220, height=40, text="Scoreboard", command=update_scoreboard, corner_radius=6)
+    scoreboard_button = ctk.CTkButton(master=frame, width=220, height=40, text="Scoreboard", command=scoreboard, corner_radius=6)
     scoreboard_button.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
 
     options_button = ctk.CTkButton(master=frame, width=220, height=40, text="Options", command=options_window,
@@ -173,13 +177,15 @@ def play_window():
         increment_counter()
 
     else:
-        #result_frame = ctk.CTkFrame(master=play_frame, width=750, height=750, corner_radius=15)
-        #result_frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
         result_label = ctk.CTkLabel(play_frame, text=f'Your final score is:\n{score}', font=("font.tff", 50, 'bold'))
         result_label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
         player_entry = ctk.CTkEntry(play_frame, width=260, height=50, placeholder_text="Enter your name:")
         player_entry.place(relx=0.5, rely=0.7, anchor=tkinter.CENTER)
-        #player_entry.bind('<Return>', lambda event: scoreboard())
+        player_entry.bind('<Return>', lambda event: get_input())
+        def get_input():
+            player_name = player_entry.get()
+            player_entry.delete(0, ctk.END)
+            update_scoreboard(player_name, score)
         back_button(play_frame)
         reset_counter()
 
@@ -195,23 +201,72 @@ def player():
     login.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
 
 
-# Work in progress
-def scoreboard(self):
-    username_input = self.player_entry.get()
-    self.player_entry.delete(0, 'end')
-    self.update_scoreboard(username_input)
-    pass
+high_score = 0
 
-# Work in progress
-def update_scoreboard():
-    username = player_entry.get()
-    # get the new score for the user
-    new_score = get_new_score(username)
-    # update the scoreboard function with the new score
-    update_scoreboard(username, new_score)
-    # update the label on the tkinter window with the new scores
-    display_scores(get_current_scores())
-    pass
+
+# Updating score and writing it to the leaderboard file.
+def update_scoreboard(name, score):
+    leaderboard_file = "leaderboard.txt"
+
+    with open(leaderboard_file, "r") as f:
+        if f.read(1):
+            f.seek(0)
+            leaderboard = json.load(f)
+        else:
+            leaderboard = []
+
+    leaderboard.append({"name": name, "score": score})
+
+    leaderboard = sorted(leaderboard, key=lambda entry: entry["score"], reverse=True)
+
+    with open("leaderboard.txt", "w") as f:
+        json.dump(leaderboard, f)
+
+
+# Display the scoreboard
+def scoreboard():
+    with open("leaderboard.txt", "r") as f:
+        leaderboard = json.load(f)
+
+    scoreboard_frame = ctk.CTkFrame(master=app, width=750, height=750, corner_radius=6)
+    scoreboard_frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+    scoreboard_label = ctk.CTkLabel(scoreboard_frame, text="Scoreboard", font=("font.tff", 50, 'bold'))
+    scoreboard_label.place(relx=0.5, rely=0.1, anchor=tkinter.CENTER)
+
+    # Table view
+    table_view = ttk.Treeview(master=scoreboard_frame, show='headings', columns=("1", "2"))
+    table_view.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
+
+    # Set table style
+    style = ttk.Style()
+    style.theme_use("default")
+
+    # Change style colors
+    style.configure("Treeview",
+                    font=("font.ttf", 25),
+                    background="#707070",
+                    foreground="black",
+                    rowheight=35,
+                    fieldbackground="#707070")
+
+    # Change color of selected row
+    style.map('Treeview', background=[('selected', "#535353")])
+
+    # Set table names
+    table_view.column("1", width=230, anchor=CENTER)
+    table_view.heading("1", text="Name")
+    table_view.column("2", width=230, anchor=CENTER)
+    table_view.heading("2", text="Score")
+
+    # Loop through the leaderboard file.
+    for item in leaderboard:
+        values = (item['name'], item['score'])
+
+        # Display the leaderboard
+        table_view.insert("", "end", values=values)
+
+    back_button(scoreboard_frame)
+
 
 # Work in progress
 def feedback():
