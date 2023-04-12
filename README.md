@@ -13,3 +13,5 @@ requests==2.28.2
 tk==0.1.0
 urllib3==1.26.15
 ```
+
+## Run main.py file to start the game.
