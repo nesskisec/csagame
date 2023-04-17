@@ -1,5 +1,3 @@
-import itertools
-
 import customtkinter as ctk
 import tkinter
 from tkinter import *
@@ -182,7 +180,7 @@ def play_window():
         player_entry = ctk.CTkEntry(play_frame, width=260, height=50, placeholder_text="Enter your name:")
         player_entry.place(relx=0.5, rely=0.7, anchor=tkinter.CENTER)
         player_entry.bind('<Return>', lambda event: get_input())
-        
+
         def get_input():
             player_name = player_entry.get()
             player_entry.delete(0, ctk.END)
