@@ -182,10 +182,12 @@ def play_window():
         player_entry = ctk.CTkEntry(play_frame, width=260, height=50, placeholder_text="Enter your name:")
         player_entry.place(relx=0.5, rely=0.7, anchor=tkinter.CENTER)
         player_entry.bind('<Return>', lambda event: get_input())
+        
         def get_input():
             player_name = player_entry.get()
             player_entry.delete(0, ctk.END)
             update_scoreboard(player_name, score)
+            scoreboard()
         back_button(play_frame)
         reset_counter()
 
@@ -216,8 +218,15 @@ def update_scoreboard(name, score):
             leaderboard = []
 
     leaderboard.append({"name": name, "score": score})
-
+    # Sorting the leaderboard by the highest score first.
     leaderboard = sorted(leaderboard, key=lambda entry: entry["score"], reverse=True)
+
+    # loop through data
+    for i, item1 in enumerate(leaderboard):
+        for j, item2 in enumerate(leaderboard):
+            if i != j and item1['name'] == item2['name'] and item1['score'] >= item2['score']:
+                # Removes duplicate names that have a lower score than highest achieved.
+                leaderboard.pop(j)
 
     with open("leaderboard.txt", "w") as f:
         json.dump(leaderboard, f)

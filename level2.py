@@ -53,7 +53,7 @@ class Level2:
 
     def create_rooms(self):
         self.rooms = [
-            Room("Lobby", "You are in the lobby. There is a receptionist desk here.\n\n", [], {"north": 1, "east": 2, "west": 3}),
+            Room("Lobby", "You are in the lobby. There is a receptionist desk here.\n\n", [], {"north": 1, "east": 3, "west": 2}),
 
             Room("Reception Area", "You are in the reception area. There is a waiting area and a phone here.\n\n",
                  ["phone"], {"south": 0, "west": 4, "east": 6, "north": 5}),
@@ -157,8 +157,11 @@ class Level2:
             item_name = user_input[4:]
             if item_name in self.inventory:
                 if self.current_room.name == "CEO's Office" and item_name == "key":
-                    self.lbl_input.configure(text="You have found a cable hidden.")
-                    self.btn_submit.configure(state=tk.DISABLED)
+                    self.inventory.append("network cable")
+                    self.lbl_input.configure(text="You have found a hidden network cable.", text_color="yellow")
+                    self.inventory.remove("key")
+                    self.print_items()
+                    self.print_inventory()
                 elif self.current_room.name == "Server Room" and item_name == "USB drive":
                     self.lbl_input.configure(text="You used the USB Drive and have infected the computers with Ransomware.\nGame Over!", text_color="red")
                     self.btn_submit.configure(state=tk.DISABLED)
