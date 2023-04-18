@@ -8,6 +8,7 @@ $pip install *
 
 -   :penguin: Linux
 -   :computer: Windows
+-   :snake: Python
 
 
 ### Environment Requirements
