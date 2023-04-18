@@ -1,6 +1,11 @@
 # Cyber Security Awareness Game
 
-## First install git for your OS
+## Downloa and Install :snake: Python v.3.10
+```
+https://www.python.org/downloads/
+```
+
+## Install git for your OS
 [https://github.com/git-guides/install-git](https://github.com/git-guides/install-git)
 
 ## Clone this repository
