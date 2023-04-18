@@ -4,7 +4,7 @@ Copy the repository and install the requirements below.
 
 $pip install *
 
-### Environment Dependencies
+### Environment Requirements
 ```ad-warning
 python==3.10
 certifi==2022.12.7
