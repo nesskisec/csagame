@@ -1,5 +1,8 @@
 # Cyber Security Awareness Game
 
+Copy the repository and install the requirements below.
+
+$pip install *
 
 ### Environment Dependencies
 ```ad-warning
