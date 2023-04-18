@@ -1,22 +1,24 @@
 # Cyber Security Awareness Game
 
-## Downloa and Install :snake: Python v.3.10
+## Download and Install :snake: Python v.3.10
 ```
 https://www.python.org/downloads/
 ```
 
 ## Install git for your OS
+```
 [https://github.com/git-guides/install-git](https://github.com/git-guides/install-git)
+```
 
 ## Clone this repository
 ```
-$git clone https://github.com/nesskisec/csagame.git
+git clone https://github.com/nesskisec/csagame.git
 ```
 
-Copy the repository and install the requirements below.
+## Copy the repository and install the requirements below.
 
 ```
-$pip install *
+pip install *
 ```
 
 -   :penguin: Linux
@@ -24,7 +26,7 @@ $pip install *
 -   :snake: Python
 
 
-## Requirements
+## Requirements *
 ```ad-warning
 python==3.10
 certifi==2022.12.7
