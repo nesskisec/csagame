@@ -7,7 +7,7 @@ https://www.python.org/downloads/
 
 ## Install git for your OS :desktop_computer: :computer_mouse:
 ```
-[https://github.com/git-guides/install-git](https://github.com/git-guides/install-git)
+https://github.com/git-guides/install-git
 ```
 
 ## Clone this repository :cyclone:
