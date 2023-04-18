@@ -1,6 +1,12 @@
 # Cyber Security Awareness Game
 
+## First install git for your OS
 [https://github.com/git-guides/install-git](https://github.com/git-guides/install-git)
+
+## Clone this repository
+```
+$git clone https://github.com/nesskisec/csagame.git
+```
 
 Copy the repository and install the requirements below.
 
