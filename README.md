@@ -5,12 +5,12 @@
 https://www.python.org/downloads/
 ```
 
-## Install git for your OS
+## Install git for your OS :desktop_computer: :computer_mouse:
 ```
 [https://github.com/git-guides/install-git](https://github.com/git-guides/install-git)
 ```
 
-## Clone this repository
+## Clone this repository :cyclone:
 ```
 git clone https://github.com/nesskisec/csagame.git
 ```
