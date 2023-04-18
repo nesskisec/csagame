@@ -1,9 +1,9 @@
 # Cyber Security Awareness Game
 
 Copy the repository and install the requirements below.
-
+```
 $pip install *
-
+```
 ### Environment Requirements
 ```ad-warning
 python==3.10
