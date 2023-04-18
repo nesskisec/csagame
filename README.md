@@ -18,3 +18,4 @@ urllib3==1.26.15
 ```
 
 Run main.py file to start the game.
+$./main.py
