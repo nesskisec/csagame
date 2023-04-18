@@ -15,7 +15,7 @@ https://www.python.org/downloads/
 git clone https://github.com/nesskisec/csagame.git
 ```
 
-## Copy the repository and install the requirements below.
+## Copy the repository and install the requirements below. :coffee:
 
 ```
 pip install *
