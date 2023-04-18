@@ -6,6 +6,10 @@ Copy the repository and install the requirements below.
 $pip install *
 ```
 
+-   :penguin: Linux
+-   :computer: Windows
+
+
 ### Environment Requirements
 ```ad-warning
 python==3.10
