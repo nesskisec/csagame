@@ -26,7 +26,7 @@ pip install *
 -   :snake: Python
 
 
-## Requirements *
+## Requirements * :ballot_box_with_check:
 ```ad-warning
 python==3.10
 certifi==2022.12.7
