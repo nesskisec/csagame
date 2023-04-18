@@ -11,7 +11,7 @@ $pip install *
 -   :snake: Python
 
 
-### Environment Requirements
+## Requirements
 ```ad-warning
 python==3.10
 certifi==2022.12.7
