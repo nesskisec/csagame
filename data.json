@@ -1,5 +1,6 @@
 {
   "questions": [
+    "Which of the passwords are most secure?",
     "What is phishing?",
     "What is the most common way\nto deliver a phishing attack?",
     "What should you do if you\nreceive a suspicious email?",
@@ -20,7 +21,8 @@
     "What is the goal of a MitM attack?",
     "How can you protect yourself from MitM attacks?"
   ],
-  "answers": [
+  "answers":[
+    3,
     2,
     3,
     4,
@@ -42,7 +44,11 @@
     3
   ],
   "options": [
-
+    ["password123",
+      "123456",
+      "#N4ja!chi.bA3=$",
+      "p4$$w0rD"
+    ],
     ["A type of fishing",
       "An attempt to obtain sensitive information\nby disguising as a trustworthy entity",
       "A type of spam email",
@@ -138,6 +144,69 @@
       "Be cautious of suspicious links and emails",
       "Use a Virtual Private Network (VPN)",
       "All of the above"
+    ]
+  ],
+  "feedback": [
+
+    ["Correct, this password is not easily guessed\nor broken by a brute force attack.",
+      "Wrong, this password could easily be guessed\nor broken by an attacker using a dictionary."
+    ],
+        ["Well done, this is correct!",
+      "Wrong, the goal for an attack like this is to trick\nthe victim into revealing sensitive information."
+    ],
+        ["Yes, emails are the most common way for a phishing attack to be delivered.",
+      "Not quite, a lot of these can look very real and usually\ntry to present the potential victim with the sense of urgency."
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
+    ],
+        ["Good feedback to user",
+      "Bad feedback to the user"
     ]
   ]
 }

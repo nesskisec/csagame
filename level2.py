@@ -51,6 +51,7 @@ class Level2:
 
         self.print_inventory()
 
+    # Function to setup the environment for Level 2.
     def create_rooms(self):
         self.rooms = [
             Room("Lobby", "You are in the lobby. There is a receptionist desk here.\n\n", [], {"north": 1, "east": 3, "west": 2}),
@@ -107,11 +108,13 @@ class Level2:
                  {"north": 12, "west": 7})
         ]
 
+    # Function to display the current room text and description, also if any items exists in the room.
     def print_room(self):
         self.lbl_room.configure(text=self.current_room.name)
         self.lbl_desc.configure(text=self.current_room.description)
         self.print_items()
 
+    # Function to check if any items exist in the room or not.
     def print_items(self):
         items_str = ", ".join(self.current_room.items)
         if items_str:
@@ -119,6 +122,7 @@ class Level2:
         else:
             self.lbl_items.configure(text="There are no items in this room.\n\n")
 
+    # Function to print if any items are in inventory or not.
     def print_inventory(self):
         if len(self.inventory) > 0:
             inventory_str = ", ".join(self.inventory)
@@ -162,6 +166,8 @@ class Level2:
                     self.inventory.remove("key")
                     self.print_items()
                     self.print_inventory()
+                elif self.current_room.name == "Server Room" and item_name == "network cable":
+                    self.lbl_input.configure(text="You have fixed a broken link to the backup server.\nBackup is restored, well done!", text_color="green")
                 elif self.current_room.name == "Server Room" and item_name == "USB drive":
                     self.lbl_input.configure(text="You used the USB Drive and have infected the computers with Ransomware.\nGame Over!", text_color="red")
                     self.btn_submit.configure(state=tk.DISABLED)

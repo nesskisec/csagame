@@ -7,10 +7,10 @@ import json
 from level2 import Level2
 
 # Selecting GUI theme - dark, light, system (for system default)
-ctk.set_appearance_mode("dark")
+#ctk.set_appearance_mode("dark")
 
 # Selecting color theme - blue, green, dark-blue
-ctk.set_default_color_theme("dark-blue")
+#ctk.set_default_color_theme("dark-blue")
 
 # Setting window size and title.
 app = ctk.CTk()
@@ -32,7 +32,7 @@ def main_window():
     bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
     # Create custom frame
-    frame = ctk.CTkFrame(master=app, width=500, height=500, corner_radius=6)
+    frame = ctk.CTkFrame(master=app, width=500, height=500, corner_radius=6, bg_color='transparent')
     frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
     header_label = ctk.CTkLabel(master=frame, text="Main Menu", font=('font.ttf', 30))
@@ -58,19 +58,21 @@ def main_window():
 
 
 def options_window():
+    # Creating options window
     options_frame = ctk.CTkFrame(master=app, width=500, height=500, corner_radius=6)
     options_frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
     options_frame2 = ctk.CTkFrame(master=options_frame, width=500, height=500, corner_radius=6)
     options_frame2.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
+    # Setting options for light and dark mode with buttons
     light_button = ctk.CTkButton(options_frame2, text='Light mode', command=lambda: ctk.set_appearance_mode('light'))
     light_button.place(relx=0.5, rely=0.6, anchor=tkinter.CENTER)
 
     dark_button = ctk.CTkButton(options_frame2, text='Dark mode', command=lambda: ctk.set_appearance_mode('dark'))
     dark_button.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
 
-    construction_label = ctk.CTkLabel(options_frame2, text="This page is under construction", font=("font.tff", 30, 'bold'))
+    construction_label = ctk.CTkLabel(options_frame2, text="More options are coming soon...", font=("font.tff", 30, 'bold'))
     construction_label.place(anchor='nw')
 
     back_button(options_frame2)
@@ -80,29 +82,42 @@ def options_window():
 score = 0
 
 
+# Function for checking if a button is clicked and increment score if answer is correct.
 def button_clicked(button_num, check_answer):
+    fb = feedback()
     global score
     if button_num == check_answer:
+        feedback_frame = ctk.CTkFrame(master=app, width=750, height=300, corner_radius=6, fg_color='green', bg_color='green')
+        feedback_frame.place(relx=0.5, rely=0.8, anchor=tkinter.CENTER)
         score += 1
+        feedback_label = ctk.CTkLabel(feedback_frame, text=fb[counter - 1][0], bg_color='green')
+        feedback_label.place(relx=0.5, rely=0.9, anchor=tkinter.S)
         play_window()
     else:
+        feedback_frame = ctk.CTkFrame(master=app, width=750, height=300, corner_radius=6, fg_color='red', bg_color='red')
+        feedback_frame.place(relx=0.5, rely=0.8, anchor=tkinter.CENTER)
         score
+        feedback_label = ctk.CTkLabel(feedback_frame, text=fb[counter - 1][1])
+        feedback_label.place(relx=0.5, rely=0.9, anchor=tkinter.S)
         play_window()
 
 
 counter = 0
 
 
+# Function for incrementing counter by 1.
 def increment_counter():
     global counter
     counter += 1
 
 
+# Function for resetting counter.
 def reset_counter():
     global counter
     counter = 0
 
 
+# Function for a return to main menu button and quit button.
 def back_button(window):
     return_button = ctk.CTkButton(master=window, width=220, height=40, text="Main Menu", command=main_window, corner_radius=6)
     return_button.place(relx=0.25, rely=0.9, anchor=tkinter.CENTER)
@@ -111,7 +126,11 @@ def back_button(window):
     quit_button.place(relx=0.75, rely=0.9, anchor=tkinter.CENTER)
 
 
+# Function for displaying Level options. More Level buttons can be added here once created.
 def play_options():
+    reset_counter()
+    global score
+    score = 0
 
     play_options_frame = ctk.CTkFrame(master=app, width=500, height=500, corner_radius=6)
     play_options_frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
@@ -128,6 +147,7 @@ def play_options():
     back_button(play_options_frame)
 
 
+# Function to start Level 2 of the game.
 def level2_window():
 
     new_frame = ctk.CTkFrame(master=app, width=750, height=750, corner_radius=6)
@@ -141,6 +161,7 @@ def level2_window():
     back_button(new_frame)
 
 
+# Function to start Level 1 of the game.
 def play_window():
 
     questions = question()
@@ -175,21 +196,23 @@ def play_window():
         increment_counter()
 
     else:
-        result_label = ctk.CTkLabel(play_frame, text=f'Your final score is:\n{score}', font=("font.tff", 50, 'bold'))
-        result_label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+        result_label = ctk.CTkLabel(play_frame, text=f'Your final score is:\n{score}\n\nTotal correct answers:\n{int(score / len(correct)*100)}%', font=("font.tff", 50, 'bold'))
+        result_label.place(relx=0.5, rely=0.3, anchor=tkinter.CENTER)
         player_entry = ctk.CTkEntry(play_frame, width=260, height=50, placeholder_text="Enter your name:")
         player_entry.place(relx=0.5, rely=0.7, anchor=tkinter.CENTER)
         player_entry.bind('<Return>', lambda event: get_input())
 
+        # Function to get the player entry and display the scoreboard after entry.
         def get_input():
             player_name = player_entry.get()
             player_entry.delete(0, ctk.END)
             update_scoreboard(player_name, score)
             scoreboard()
+
         back_button(play_frame)
         reset_counter()
 
-
+# Unfinished function. Plan to create a login option here.
 def player():
     user_frame = ctk.CTkFrame(master=app, width=750, height=750, corner_radius=6)
     user_frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
@@ -214,7 +237,7 @@ def update_scoreboard(name, score):
             leaderboard = json.load(f)
         else:
             leaderboard = []
-
+    # Appending name and score to the leaderboard file.
     leaderboard.append({"name": name, "score": score})
     # Sorting the leaderboard by the highest score first.
     leaderboard = sorted(leaderboard, key=lambda entry: entry["score"], reverse=True)
@@ -225,16 +248,18 @@ def update_scoreboard(name, score):
             if i != j and item1['name'] == item2['name'] and item1['score'] >= item2['score']:
                 # Removes duplicate names that have a lower score than highest achieved.
                 leaderboard.pop(j)
-
+    # Write to the leaderboard file.
     with open("leaderboard.txt", "w") as f:
         json.dump(leaderboard, f)
 
 
-# Display the scoreboard
+# Function to display the scoreboard.
 def scoreboard():
+    # Read the leaderboard file.
     with open("leaderboard.txt", "r") as f:
         leaderboard = json.load(f)
 
+    # Frame and label for the scoreboard window.
     scoreboard_frame = ctk.CTkFrame(master=app, width=750, height=750, corner_radius=6)
     scoreboard_frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
     scoreboard_label = ctk.CTkLabel(scoreboard_frame, text="Scoreboard", font=("font.tff", 50, 'bold'))
@@ -275,26 +300,23 @@ def scoreboard():
     back_button(scoreboard_frame)
 
 
-# Work in progress
+# Function to retrieve the feedback from data.json file
 def feedback():
-    scoreboard_frame = ctk.CTkFrame(master=app, width=750, height=750, corner_radius=6)
-    scoreboard_frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
-
-    scoreboard_label = ctk.CTkLabel(scoreboard_frame, text=f'{scoreboard().username_input}\t\t\t\t{score}', font=("font.tff", 50, 'bold'))
-    scoreboard_label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
-    pass
+    feedbacks = (data['feedback'])
+    return feedbacks
 
 
+# Function to retrieve the options from data.json file
 def options():
     option = (data['options'])
     return option
 
-
+# Function to retrieve the answers from data.json file
 def correct_answers():
     answers = (data['answers'])
     return answers
 
-
+# Function to retrieve the questions from data.json file
 def question():
     questions = (data['questions'])
     return questions
