@@ -21,6 +21,10 @@ class Level2:
         self.create_rooms()
         self.current_room = self.rooms[0]
 
+        self.backup = False
+        self.two_factor = False
+        self.update = False
+
         self.app = app
 
         self.lbl_room = ctk.CTkLabel(self.app, text=self.current_room.name+"\n\n", font=('font.ttf', 50))
@@ -136,6 +140,15 @@ class Level2:
         self.process_input(user_input)
 
     def process_input(self, user_input):
+        if self.update == True and self.backup == True and self.two_factor == True:
+            self.lbl_room.configure(text="CONGRATULATIONS", text_color="yellow")
+            self.lbl_desc.configure(text="You have solved all the security tasks in this Level.", text_color="yellow")
+            self.lbl_items.configure(text="You have completed Level 2\nand have unlocked the next level of the game.", text_color="yellow")
+            self.lbl_inventory.configure(text="")
+            self.lbl_help.configure(text="")
+            self.lbl_input.configure(text="Please, return to the main menu or quit the game.", text_color="green")
+            self.btn_submit.configure(state="disabled")
+
         if user_input == "help":
             message = "\nPossible commands:\n\n" \
                       "north, east, south, west\n" \
@@ -166,11 +179,29 @@ class Level2:
                     self.inventory.remove("key")
                     self.print_items()
                     self.print_inventory()
+                elif self.current_room.name == "CEO's Office" and item_name == "phone":
+                    self.two_factor = True
+                    self.lbl_input.configure(text="You have have enabled 2Factor Authentication for the CEO, good job!", text_color="green")
+                    self.inventory.remove("phone")
+                    self.print_items()
+                    self.print_inventory()
                 elif self.current_room.name == "Server Room" and item_name == "network cable":
+                    self.backup = True
                     self.lbl_input.configure(text="You have fixed a broken link to the backup server.\nBackup is restored, well done!", text_color="green")
+                    self.inventory.remove("network cable")
+                    self.print_items()
+                    self.print_inventory()
+                elif self.current_room.name == "Server Room" and item_name == "update device":
+                    self.update = True
                 elif self.current_room.name == "Server Room" and item_name == "USB drive":
                     self.lbl_input.configure(text="You used the USB Drive and have infected the computers with Ransomware.\nGame Over!", text_color="red")
                     self.btn_submit.configure(state=tk.DISABLED)
+                elif self.current_room.name == "Security Room" and item_name == "ID card":
+                    self.inventory.append("update device")
+                    self.lbl_input.configure(text="You have found an update device.", text_color="yellow")
+                    self.inventory.remove("ID card")
+                    self.print_items()
+                    self.print_inventory()
                 else:
                     self.lbl_input.configure(text="\n\nYou cannot use that item here.\n\n")
             else:

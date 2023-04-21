@@ -147,66 +147,65 @@
     ]
   ],
   "feedback": [
-
     ["Correct, this password is not easily guessed\nor broken by a brute force attack.",
       "Wrong, this password could easily be guessed\nor broken by an attacker using a dictionary."
     ],
-        ["Well done, this is correct!",
+    ["Well done, this is correct!",
       "Wrong, the goal for an attack like this is to trick\nthe victim into revealing sensitive information."
     ],
-        ["Yes, emails are the most common way for a phishing attack to be delivered.",
+    ["Yes, emails are the most common way for a phishing attack to be delivered.",
       "Not quite, a lot of these can look very real and usually\ntry to present the potential victim with the sense of urgency."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Correct, it is always best to be sure.",
+      "Wrong, do not be curious if anything is suspicious."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Correct, never open an attachment\n that you are not sure of",
+      "No, a file that you are not sure of,\ncould contain malware or a backdoor into your personal computer."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Good, phishing tactics wants the victims to be stressed, to try forcing them into making bad decisions.",
+      "A big warning sign that something is off,\nis when someone need you to do something in a rush."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Good everything mentioned are,\npreventing a phishing attack to be successful.",
+      "It is not 100% correct,\nbut it is one step in the right direction."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Very good, all are common\nways to spot a phishing email.",
+      "It is not 100% correct,\nbut it is one step in the right direction."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Great, the attack commonly pretends to be someone\nwith a high rank within a company to see if they can stress their victim with their status.",
+      "No, that is incorrect."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Correct, spear phishing specifically targets their victims.",
+      "No, that is not the correct type of phishing attack."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Yes, your data gets locked with encryption\nand the attackers want to get money from you to unlock it again.",
+      "No, the attackers goal here\nis they want to force you to pay them"
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Yes, educate yourself.",
+      "Wrong, not the best way of these options."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["You are good, all of these are certainly common\nways for preventing against ransomeware.",
+      "Not quite, but you are not completely wrong."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Yes, then the attackers do not get what they want,\nand you get your files back.(if these are not affected as well of course).",
+      "One thing you definitely should not do,\nis to pay the attackers this only encourage more attacks like this."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Indeed, these are all common ways to get infected.",
+      "Not entirely correct, but not completely wrong either."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Yes, there is someone listening.",
+      "No, this attack is listening in on unencrypted traffic between someone."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["That is correct!",
+      "Wrong, there is someone pretending to be someone\nor something legitimate here."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Yes, ARP spoofing is correct.",
+      "No, this is the physical address of a device\nthat usually gets tampered with."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Very good, your sensitive information is valuable.",
+      "No, this you should always protect."
     ],
-        ["Good feedback to user",
-      "Bad feedback to the user"
+    ["Great, a VPN is correct.",
+      "That is not correct. You should always\nencrypt your communication online."
     ]
   ]
 }
